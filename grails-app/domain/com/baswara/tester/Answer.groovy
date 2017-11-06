@@ -18,5 +18,6 @@ class Answer {
 
     static mapping = {
         id generator: 'assigned'
+        content type: "text"
     }
 }
