@@ -23,7 +23,7 @@ class AnswerController extends RestfulController {
     }
 
     def lastAnswer() {
-        def result = [redirect: 'info']
+        def result = [redirect: '/getready']
         String username = springSecurityService.authentication.principal.getUsername()
         Answer.findByCreatedBy(username)
         List<Answer> answerList = Answer.where{createdBy == username}.list(sort: 'number', order: 'desc', max: 1)
